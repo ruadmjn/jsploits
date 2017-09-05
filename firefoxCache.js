@@ -1,0 +1,1 @@
+$.ajax({ url: 'about:cache?storage=disk&context=', success: function(data) { alert(data); } });
