@@ -8,6 +8,7 @@ function proceed() {
     url: 'about:cache?storage=disk',
     success: function (result) {
       $('#cacheData').html(result);
+      console.log(result);
     }
   });
 }
