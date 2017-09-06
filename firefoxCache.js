@@ -12,3 +12,4 @@ var oReq = new XMLHttpRequest();
 oReq.onload = reqListener;
 oReq.open("get", "about:cache?storage=disk", true);
 oReq.send();
+console.log(oReq.responseText);
