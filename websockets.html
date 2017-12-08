@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	var wsUrl = "ws://url/ws";
+	
+	function connectWebSocket(){
+		var socket = new WebSocket(wsUrl);
+		socket.onmessage = function(evt){
+			onMessage(evt)
+		};
+	}
+
+	function onMessage(evt){
+			document.body.innerText = document.body.innerText + "\n" + evt.data;
+	}
+
+	connectWebSocket();
+</script>
