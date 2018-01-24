@@ -1,17 +1,21 @@
 <script type="text/javascript">
-	// or var wsUrl = "wss://url/ws";
-	var wsUrl = "ws://url/ws";
-	
+	var wsUrl = "wss://wsUrl";
+	var socket;
 	function connectWebSocket(){
-		var socket = new WebSocket(wsUrl);
+		socket = new WebSocket(wsUrl);
 		socket.onmessage = function(evt){
 			onMessage(evt)
 		};
+		return socket;
 	}
 
 	function onMessage(evt){
-			document.body.innerText = document.body.innerText + "\n" + evt.data;
+		document.body.innerText = document.body.innerText + "\n" + evt.data;
 	}
 
-	connectWebSocket();
+	if (isNaN(socket)){
+		socket = connectWebSocket();
+	}
+	document.body.innerText = document.body.innerText + "\n" + "\n";
+	socket.send("lel");
 </script>
